@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Timers;
 using System.IO;
 using System.Windows.Media.Imaging;
+using System.Diagnostics;
 
 namespace Slideshow.View
 {
@@ -106,8 +107,7 @@ namespace Slideshow.View
 			if (string.IsNullOrWhiteSpace(PathTextBox.Text))
 				return;
 
-			string argument = "/select, \"" + PathTextBox.Text + "\"";
-			System.Diagnostics.Process.Start("explorer.exe", argument);
+			Process.Start("explorer.exe", string.Format("/select,\"{0}\"", PathTextBox.Text));
 		}
 	}
 
