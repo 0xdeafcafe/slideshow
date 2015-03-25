@@ -6,6 +6,7 @@ using System.Timers;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.Diagnostics;
+using Slideshow.View.ViewModels;
 
 namespace Slideshow.View
 {
@@ -19,11 +20,13 @@ namespace Slideshow.View
 			InitializeComponent();
 		}
 
+		public MainViewModel ViewModel { get { return (MainViewModel) DataContext; } }
+
 		private static readonly string[] AcceptedFileExtentions =
 		{
-			"jpg",
-			"jpeg",
-			"png"
+			".jpg",
+			".jpeg",
+			".png"
 		};
 
 		private int _pictureIndex;
