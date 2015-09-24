@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExifLib, Version=1.7.0.0, Culture=neutral, PublicKeyToken=30284005913968db, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExifLib.1.7.0.0\lib\net45\ExifLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -48,6 +52,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.13\lib\net\WpfAnimatedGif.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -55,6 +63,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Extentions\BitmapImageExtentions.cs" />
+    <Compile Include="Extentions\BitmaSourceExtentions.cs" />
     <Compile Include="Extentions\ObservableCollectionExtentions.cs" />
     <Compile Include="Models\ObservableObject.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -89,6 +99,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
