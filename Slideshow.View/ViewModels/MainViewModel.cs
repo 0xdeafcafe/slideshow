@@ -99,17 +99,20 @@ namespace Slideshow.View.ViewModels
 			ImagePaths.Clear();
 
 			// Validate SelectedPath
-			if (!Directory.Exists(SelectedPath))
+			var directories = SelectedPath.Split('%');
+			foreach (var directory in directories)
 			{
-				MessageBox.Show("Specified file path is not a real directory. Please ammend.", "Path Not Found", MessageBoxButton.OK, MessageBoxImage.Error);
-				return;
+				if (!Directory.Exists(directory))
+				{
+					MessageBox.Show("A specified file path is not a real directory. Please ammend.", "Path Not Found", MessageBoxButton.OK, MessageBoxImage.Error);
+					return;
+				}
 			}
-
+			
 			// Load Files
 			var files = new List<string>();
-			LoadFiles(SelectedPath, ref files);
-			foreach (var file in files)
-				ImagePaths.Add(file);
+			foreach(var directory in directories) LoadFiles(directory, ref files);
+			foreach (var file in files) ImagePaths.Add(file);
 
 			// Shuffle
 			ImagePaths.Shuffle();
