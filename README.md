@@ -8,3 +8,4 @@ it, resize it, and full-screen it. Unlike those fucking annoying slideshow apps.
 You can also click on the file path label, and it'll open an explorer window with that file selected.
 
 ![hi konnaire](http://i.imgur.com/JSEOo9J.jpg)
+**`note: this is not me`**
